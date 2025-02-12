@@ -4,18 +4,18 @@ function Button({ id, title, rightIcon, leftIcon, containerClass }) {
       <button
         type="button"
         id={id}
-        className={`group relative w-fit cursor-pinter overflow-hidden rounded-full px-7 py-3 text-blue-200 bg-violet-50 flex-center ${containerClass}`}
+        className={`group relative w-fit cursor-pinter overflow-hidden rounded-full px-7 py-3 md:px-4 md:py-2 text-blue-200 bg-violet-50 flex-center ${containerClass}`}
       >
         <span className="relative inline-flex overflow-hidden font-bold uppercase font-general">
-          <div className="flex-center gap-4 translate-y-0 skew-y-0 opacity-100 transition-all duration-500 group-hover:opacity-0 group-hover:translate-y-[160%] group-hover:skew-y-12">
-            <span className="text-xl sm:text-2xl md:text-3xl">{leftIcon}</span>
-            <span className="text-xs sm:text-lg md:text-xl">{title}</span>
-            <span className="text-xl sm:text-2xl md:text-3xl">{rightIcon}</span>
+          <div className="flex-center gap-2 translate-y-0 skew-y-0 opacity-100 transition-all duration-500 group-hover:opacity-0 group-hover:translate-y-[160%] group-hover:skew-y-12">
+            <span className="text-xl sm:text-2xl md:text-xl">{leftIcon}</span>
+            <span className="text-xs sm:text-lg md:text-sm">{title}</span>
+            <span className="text-xl sm:text-2xl md:text-xl">{rightIcon}</span>
           </div>
-          <div className="flex-center gap-4 absolute translate-y-[200%] skew-y-12 opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0 group-hover:skew-y-0">
-            <span className="text-xl sm:text-2xl md:text-3xl">{leftIcon}</span>
-            <span className="text-xs sm:text-lg md:text-xl">{title}</span>
-            <span className="text-xl sm:text-2xl md:text-3xl">{rightIcon}</span>
+          <div className="flex-center gap-2 absolute translate-y-[200%] skew-y-12 opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0 group-hover:skew-y-0">
+            <span className="text-xl sm:text-2xl md:text-xl">{leftIcon}</span>
+            <span className="text-xs sm:text-lg md:text-sm">{title}</span>
+            <span className="text-xl sm:text-2xl md:text-xl">{rightIcon}</span>
           </div>
         </span>
       </button>
