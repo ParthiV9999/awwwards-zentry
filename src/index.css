@@ -116,6 +116,18 @@ body {
     will-change: opacity, transform;
   }
 
+  .bento-tilt_1 {
+    @apply relative border-hsla col-span-2 overflow-hidden rounded-md transition-transform duration-300 ease-in-out;
+  }
+
+  .bento-tilt_1 {
+    @apply relative border-hsla col-span-1 overflow-hidden rounded-md transition-transform duration-300 ease-in-out;
+  }
+
+  .bento-title {
+    @apply uppercase text-4xl md:text-6xl font-black font-zentry;
+  }
+
   .mask-clip-path {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }

@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar";
 import About from "./pages/About";
+import Features from "./pages/Features";
 import Hero from "./pages/Hero";
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
       <Navbar />
       <Hero />
       <About />
-      <section className="h-screen bg-blue-200 w-full"></section>
+      <Features />
     </main>
   );
 }
