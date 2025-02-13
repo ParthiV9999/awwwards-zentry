@@ -18,9 +18,15 @@ function BentoTilt({ children, className = "" }) {
     const relativeY = clientY - top;
 
     const tiltX = gsap.utils.mapRange(0, width, 5, -5, relativeX);
-    const tiltY = gsap.utils.mapRange(0, height, -10, 10, relativeY);
+    const tiltY = gsap.utils.mapRange(0, height, -5, 5, relativeY);
 
     const newTransform = `rotateX(${tiltY}deg) rotateY(${tiltX}deg) scale3d(.95, .95, .95)`;
+
+    setTransformStyle(newTransform);
+  };
+
+  const handleMouseLeave = () => {
+    const newTransform = `rotateX(0deg) rotateY(0deg) scale3d(1,1,1)`;
 
     setTransformStyle(newTransform);
   };
@@ -33,19 +39,12 @@ function BentoTilt({ children, className = "" }) {
     });
   }, [transformStyle]);
 
-  const handleMouseLeave = () => {
-    const newTransform = `rotateX(0deg) rotateY(0deg) scale3d(1,1,1)`;
-
-    setTransformStyle(newTransform);
-  };
-
   return (
     <div
       ref={itemRef}
       className={`transform-3d ${className}`}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      style={{ perspective: "1200px" }}
     >
       {children}
     </div>
