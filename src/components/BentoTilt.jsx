@@ -1,4 +1,6 @@
 import { useRef, useState } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 function BentoTilt({ children, className = "" }) {
   const [transformStyle, setTransformStyle] = useState("");
@@ -12,28 +14,38 @@ function BentoTilt({ children, className = "" }) {
     const { left, top, width, height } =
       itemRef.current.getBoundingClientRect();
 
-    const relativeX = clientX - (left + width / 2);
-    const relativeY = clientY - (top + height / 2);
+    const relativeX = clientX - left;
+    const relativeY = clientY - top;
 
-    const tiltX = (relativeX - 0.5) * 5;
-    const tiltY = (relativeY - 0.5) * -5;
+    const tiltX = gsap.utils.mapRange(0, width, 5, -5, relativeX);
+    const tiltY = gsap.utils.mapRange(0, height, -10, 10, relativeY);
 
-    const newTransform = `perspective(700px) rotateX(${tiltY}deg) rotateY(${tiltX}deg)) scale3d(0.95, 0.95, 0.95)`;
+    const newTransform = `rotateX(${tiltY}deg) rotateY(${tiltX}deg) scale3d(.95, .95, .95)`;
 
     setTransformStyle(newTransform);
   };
 
+  useGSAP(() => {
+    gsap.to(itemRef.current, {
+      transform: transformStyle,
+      duration: 1,
+      ease: "power1.out",
+    });
+  }, [transformStyle]);
+
   const handleMouseLeave = () => {
-    setTransformStyle("");
+    const newTransform = `rotateX(0deg) rotateY(0deg) scale3d(1,1,1)`;
+
+    setTransformStyle(newTransform);
   };
 
   return (
     <div
       ref={itemRef}
-      className={className}
+      className={`transform-3d ${className}`}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      style={{ transform: transformStyle }}
+      style={{ perspective: "1200px" }}
     >
       {children}
     </div>

@@ -7,8 +7,17 @@ function BentoCard({ src, title, desc, isComingSoon }) {
 
   const hoverButtonRef = useRef(null);
 
-  const handleMouseMove = () => {
-    //
+  const handleMouseMove = (e) => {
+    if (!hoverButtonRef.current) return;
+
+    const { clientX, clientY } = e;
+
+    const { left, top } = hoverButtonRef.current.getBoundingClientRect();
+
+    setCursorPosition({
+      x: clientX - left,
+      y: clientY - top,
+    });
   };
 
   const handleMouseEnter = () => {
@@ -38,18 +47,17 @@ function BentoCard({ src, title, desc, isComingSoon }) {
             onMouseMove={handleMouseMove}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            className="border-hsla relative w-fit flex items-center gap-1 overflow-hidden rounded-full bg-black px-5 py-2 text-xs uppercase text-white/20 cursor-pointer"
+            className="border-hsla relative flex w-fit cursor-pointer items-center gap-1 overflow-hidden rounded-full bg-black px-5 py-2 text-xs uppercase text-white/20"
           >
             <div
-              className="pointer-events-none absolute -indent-px opacity-0 transition duration-300"
+              className="pointer-events-none absolute -inset-px opacity-0 transition duration-300"
               style={{
                 opacity: hoverOpacity,
                 backgroundImage: `radial-gradient(100px circle at ${cursorPosition.x}px ${cursorPosition.y}px, #656fe288, #00000026)`,
               }}
-            >
-              <TiLocationArrow className="relative z-20" />
-              <p className="relative z-20">coming soon</p>
-            </div>
+            />
+            <TiLocationArrow className="relative z-20" />
+            <p className="relative z-20">coming soon</p>
           </div>
         )}
       </div>
