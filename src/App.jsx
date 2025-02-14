@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar";
 import About from "./pages/About";
+import Contact from "./pages/Contact";
 import Features from "./pages/Features";
 import Hero from "./pages/Hero";
 import Story from "./pages/Story";
@@ -12,6 +13,7 @@ function App() {
       <About />
       <Features />
       <Story />
+      <Contact />
     </main>
   );
 }
