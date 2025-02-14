@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Features from "./pages/Features";
+import Footer from "./pages/Footer";
 import Hero from "./pages/Hero";
 import Story from "./pages/Story";
 
@@ -14,6 +15,7 @@ function App() {
       <Features />
       <Story />
       <Contact />
+      <Footer />
     </main>
   );
 }
