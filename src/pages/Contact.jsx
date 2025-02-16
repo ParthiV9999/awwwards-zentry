@@ -17,7 +17,7 @@ function Contact() {
           />
         </div>
 
-        <div className="absolute -top-40 left-20 w-60 sm:-top-30 md:w-70 sm:left-auto sm:right-5 md:right-10 lg:top-18 sm:w-80">
+        <div className="absolute -top-40 left-15 w-60 sm:-top-30 md:w-70 sm:left-auto sm:right-5 md:right-10 lg:top-18 sm:w-80">
           <ImageClipBox
             src="/img/swordman-partial.webp"
             clipClass="absolute md:scale-125"

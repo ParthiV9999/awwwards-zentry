@@ -67,7 +67,7 @@ function Navbar() {
               loading="lazy"
               src="/img/logo.png"
               alt="logo"
-              className="w-full object-cover bg-no-repeat"
+              className="w-10 sm:w-full object-cover bg-no-repeat"
             />
             <Button
               title="Products"
@@ -76,7 +76,8 @@ function Navbar() {
             />
             <Button
               title="Whitepaper"
-              containerClass="!bg-blue-50 hidden sm:block"
+              containerClass="!bg-blue-50"
+              hidden="!hidden sm:!inline-flex"
             />
           </div>
           <div className="flex-center gap-12">

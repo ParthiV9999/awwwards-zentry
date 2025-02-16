@@ -42,7 +42,7 @@ function Features() {
             />
           </BentoTilt>
 
-          <BentoTilt className="relative overflow-hidden rounded-md border-hsla col-span-2 row-span-1 md:col-span-1 md:row-span-1 mr-50 md:mr-0">
+          <BentoTilt className="relative overflow-hidden rounded-md border-hsla col-span-2 row-span-1 md:col-span-1 md:row-span-1 mr-26 md:mr-0">
             <BentoCard
               src="videos/feature-3.mp4"
               title={

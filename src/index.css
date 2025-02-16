@@ -98,7 +98,7 @@ body {
   }
 
   .about-image {
-    @apply absolute z-20 left-1/2 -translate-x-1/2 h-[60vh] w-96 origin-center overflow-hidden rounded-3xl md:w-[30vw];
+    @apply absolute z-20 left-1/2 -translate-x-1/2 h-[50vh] w-75 origin-center overflow-hidden rounded-3xl md:h-[60vh] md:w-[30vw];
   }
 
   .animated-title {

@@ -8,8 +8,10 @@ function Footer() {
     { href: "https://medium.com", icon: <FaMedium /> },
   ];
 
+  const currentDate = new Date();
+
   return (
-    <footer id="footer" className="w-full bg-[#5542ff] py-4 text-black">
+    <footer id="footer" className="w-full bg-[#5542ff] py-4 px-8 text-black">
       <div className="container mx-auto uppercase">
         <div className="my-8 flex items-center justify-center sm:justify-start gap-6">
           {socialLinks.map(({ href, icon }, index) => (
@@ -26,7 +28,7 @@ function Footer() {
         </div>
 
         <p className="text-sm flex items-center flex-col justify-center sm:flex-row sm:justify-between flex-wrap gap-4">
-          <span>©Parthiv 2024. All rights reserved</span>
+          <span>©Parthiv {currentDate.getFullYear()}. All rights reserved</span>
           <span>
             <a
               href="#privacy-policy"

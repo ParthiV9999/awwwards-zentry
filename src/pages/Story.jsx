@@ -95,7 +95,7 @@ function Story() {
           </div>
         </div>
 
-        <div className="w-full flex justify-center -mt-40 sm:mt-0 md:-mt-52">
+        <div className="w-full flex justify-center -mt-50 sm:-mt-30 md:-mt-52">
           <div className="w-fit md:ml-auto md:mr-56">
             <p className="text-center font-circular-web text-base sm:text-2xl md:text-sm text-violet-50 md:text-start">
               Where realms converge, lies Zentry and the <br />
